@@ -5,10 +5,7 @@ class Player
     @game_window = game_window
     @icon = Gosu::Image.new(@game_window, "images/spaceship.png", true)
    
-    # this is setting the starting horizontal position of the icon
-    @x = 326
-    # this is setting the starting vertical position of the icon
-    @y = 500
+    reset!
     @icon_height = 128
     @icon_width = 128
   end
@@ -58,6 +55,13 @@ class Player
   
   def hit_by?(balls)
      balls.any? {|ball| Gosu::distance(@x, @y, ball.x, ball.y) < 50}
+  end
+  
+  def reset!
+    # this is setting the starting horizontal position of the icon
+    @x = 380
+    # this is setting the starting vertical position of the icon
+    @y = 670
   end
   
 end

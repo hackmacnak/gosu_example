@@ -9,7 +9,7 @@ class MyGame < Gosu::Window
 
   def initialize
     # this sets the width and the heith of the screen (640x480)
-    super(780,640, false)
+    super(890,790, false)
     @player = Player.new(self)
     @balls = 3.times.map {Ball.new(self)}
     @running = true
@@ -76,6 +76,7 @@ class MyGame < Gosu::Window
   def restart_game
     @running = true
     @balls.each {|ball| ball.reset!}
+    @player.reset!
   end
 
 end
